@@ -18,11 +18,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   // fetch movies
-  const fetchMovieList = async () => {
+  const fetchMovieList = async (query = "") => {
     setIsLoading(true);
     setErrorMessage("");
     try {
-      const endPoint = `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
+      const endPoint = query
+        ? `${API_BASE_URL}/search/movie?query=${query}`
+        : `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
       const response = await fetch(endPoint, API_OPTIONS);
       if (!response.ok) {
         throw new Error("Failed to fetch Movies");
@@ -43,8 +45,8 @@ function App() {
 
   //fetch effect
   useEffect(() => {
-    fetchMovieList();
-  }, []);
+    fetchMovieList(searchTerm);
+  }, [searchTerm]);
   return (
     <main className="overflow-x-hidden">
       <div className="pattern" />
