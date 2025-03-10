@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Search from "./component/search/Search";
 import Loading from "./component/loading/Loading";
 import Card from "./component/card/Card";
+import { useDebounce } from "react-use";
 // Api
 const API_BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -17,6 +18,11 @@ function App() {
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [debounceSearchTerm, setDebounceSearchTerm] = useState("");
+
+  // optimizing the search
+  useDebounce(() => setDebounceSearchTerm(searchTerm), 500, [searchTerm]);
+
   // fetch movies
   const fetchMovieList = async (query = "") => {
     setIsLoading(true);
@@ -45,8 +51,8 @@ function App() {
 
   //fetch effect
   useEffect(() => {
-    fetchMovieList(searchTerm);
-  }, [searchTerm]);
+    fetchMovieList(debounceSearchTerm);
+  }, [debounceSearchTerm]);
   return (
     <main className="overflow-x-hidden">
       <div className="pattern" />
@@ -67,13 +73,15 @@ function App() {
 
         {/* movies showing section  */}
         <section className="all-movies my-5">
-          <h2 className="text-white ">All Movies</h2>
+          <a href="/">
+            <h2 className="text-white ">All Movies</h2>
+          </a>
           {isLoading ? (
             <Loading></Loading>
           ) : errorMessage ? (
             <p className="text-red-500">{errorMessage}</p>
           ) : (
-            <ul>
+            <ul className="mt-8">
               {movieList.map((movie) => (
                 <Card key={movie.id} movie={movie}></Card>
               ))}
