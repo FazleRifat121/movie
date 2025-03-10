@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Search from "./component/search/Search";
 import Loading from "./component/loading/Loading";
+import Card from "./component/card/Card";
 // Api
 const API_BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
@@ -45,9 +46,10 @@ function App() {
     fetchMovieList();
   }, []);
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <div className="pattern" />
       <div className="wrapper">
+        {/* header part  */}
         <header>
           <img src="hero.png" alt="Hero Banner" />
           <h1>
@@ -60,7 +62,9 @@ function App() {
             setSearchTerm={setSearchTerm}
           ></Search>
         </header>
-        <section className="all-movies mt-5">
+
+        {/* movies showing section  */}
+        <section className="all-movies my-5">
           <h2 className="text-white ">All Movies</h2>
           {isLoading ? (
             <Loading></Loading>
@@ -69,7 +73,7 @@ function App() {
           ) : (
             <ul>
               {movieList.map((movie) => (
-                <p className="text-white">{movie.title}</p>
+                <Card key={movie.id} movie={movie}></Card>
               ))}
             </ul>
           )}
