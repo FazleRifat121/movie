@@ -1,12 +1,36 @@
-# React + Vite
+# 🎬 MovieMania
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MovieMania** is a modern web app that lets you explore trending movies, top-rated films, and detailed information about each title.  
+Built with a clean UI and fast performance in mind.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [MovieMania](https://moviemania01.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Browse Trending Movies
+- View Movie Details (Poster, Overview, Ratings, Release Date)
+- Responsive Design for All Devices
+- Smooth Navigation and Animations
+
+---
+
+## 🛠️ Tech Stack
+
+- **React.js**
+- **CSS / Tailwind CSS** (if used)
+- **TMDB API** (for fetching movie data)
+- **Netlify** (for deployment)
+
+
+🤝 Contributing
+Contributions are welcome!
+Feel free to fork the repository and submit a pull request.
+
+📧 Contact
+If you like this project, connect with me:
+
+Portfolio: fazle.netlify.app
+
+LinkedIn: Fazle Rifat
