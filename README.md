@@ -24,12 +24,10 @@ Built with a clean UI and fast performance in mind.
 - **Netlify** (for deployment)
 
 
-🤝 Contributing
-Contributions are welcome!
-Feel free to fork the repository and submit a pull request.
-
 🧑‍💻 Author
+
 Fazle Rifat
+
 🎯 [Portfolio](https://fazle.netlify.app/)  
 💼 [LinkedIn](https://www.linkedin.com/in/fazle-rifat-660bb2328/)  
 📫 fazlerifatofficial@gmail.com  
