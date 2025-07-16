@@ -28,9 +28,9 @@ Built with a clean UI and fast performance in mind.
 Contributions are welcome!
 Feel free to fork the repository and submit a pull request.
 
-📧 Contact
-If you like this project, connect with me:
+🧑‍💻 Author
+Fazle Rifat
+🎯 [Portfolio](https://fazle.netlify.app/)  
+💼 [LinkedIn](https://www.linkedin.com/in/fazle-rifat-660bb2328/)  
+📫 fazlerifatofficial@gmail.com  
 
-Portfolio: fazle.netlify.app
-
-LinkedIn: Fazle Rifat
